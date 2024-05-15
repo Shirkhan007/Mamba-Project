@@ -1,0 +1,35 @@
+﻿@using Salam_moloyko.Models
+@model List<Team>;
+
+
+
+
+
+<table class="table">
+   <div class="container">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">First</th>
+            <th scope="col">Last</th>
+            <th scope="col">Handle</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <th>@item.Id</th>
+                <td>@item.Title</td>
+                <td>@item.Description</td
+                <td>@item.ImageUrl</td>
+
+            </tr>
+            <td><a class="btn btn-Mamba-primary" asp-action="Update" asp-controller="OurTeams " asp-route-id=@item.Id>Update</a></td>
+             <td><a class="btn btn-Mamba-danger" asp-action="Delete" asp-controller="OurTeams " asp-route-id=@item.Id>Delete</a></td>
+        }
+       
+        
+    </tbody>
+   </div>
+</table>
